@@ -35,6 +35,7 @@ public class ShoppingCart {
             JsonObject jsonObject = JsonParser.parseString(httResponse.body()).getAsJsonObject();
             BigDecimal price = jsonObject.get("price").getAsBigDecimal();
             prices.put(product, price);
+
         }
         // update cart state
         items.put(product, items.getOrDefault(product, 0) + quantity);
